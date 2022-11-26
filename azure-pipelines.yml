@@ -1,4 +1,4 @@
-pool: 'maclocal'
+pool: 'Default'
 
 stages:
 - stage: Build 

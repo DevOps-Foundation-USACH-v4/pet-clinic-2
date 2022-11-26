@@ -1,4 +1,4 @@
-pool: 'Dev Linux Scaleset'
+pool: 'maclocal'
 
 stages:
 - stage: Build 

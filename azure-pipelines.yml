@@ -6,12 +6,18 @@ stages:
   - job: build
     displayName: 'Build'
     steps:
-    - task: Gradle@3
-      inputs:
-        gradleWrapperFile: 'gradlew'
-        tasks: 'build'
-        publishJUnitResults: true
-        testResultsFiles: '**/TEST-*.xml'
-        javaHomeOption: 'JDKVersion'
-        sonarQubeRunAnalysis: false
-        spotBugsAnalysis: false
+    #- task: Gradle@3
+    #  inputs:
+    #    gradleWrapperFile: 'gradlew'
+    #    tasks: 'build'
+    #    publishJUnitResults: true
+    #    testResultsFiles: '**/TEST-*.xml'
+    #    javaHomeOption: 'JDKVersion'
+    #    sonarQubeRunAnalysis: false
+    #    spotBugsAnalysis: false
+    
+    - script: |
+        docker --help
+        kubectl --help
+      displayName: 'Test docker and Kubectl'
+      continueOnError: true
